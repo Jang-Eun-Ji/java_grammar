@@ -55,7 +55,33 @@ public class C03Operator {
         System.out.println(2 & 1);
         System.out.println(2>0 & 3>0);
 
-        int n1 = 10; int n2 = 20;
+        int n1 = 5; int n2 = 6;
+//        각 자리수가 모두 1인경우만 1
+        System.out.println( n1 & n2); //4 => 000100
+//        각 자리수가 하나라도 1일경우 1
+        System.out.println( n1 | n2); //7 => 000111
+//        각 자리수가 일치하지 않을 경우에 1 //  ^ : 대응되는 비트가 서로 다르면 1을 반환함 (비트 XOR연산)
+        System.out.println( n1 ^ n2); //3 => 000111
+//      ~ : not연산, 각자리마다 반대의 숫자 반환
+        System.out.println( ~n1); // 첫쨰자리가 음/양인데 음으로 변황
+//        시프트 연산자 : <<, >> => 곱셈과 나눗셈의 효과가 발생
+        System.out.println(n1<< 1); //2만큼 곱한거 2의 제곱임
+
+        int a = 13; // 00001101
+        int b = 9; // 000010011
+
+        while (true){
+            int same_index = a & b;
+            a = a ^ b; // XOR연산으로 구한 비트값 a 에 할당
+            b = same_index << 1; // 한칸 왼쪽으로 땡김 뒤의 숫자는 2진수로 바꿔서 생각해야함 2면 2의 제곱을 곱한다고 생각
+        }
+//            첫번째 반본
+//            sameindex : 1001
+//            a : 0100
+//            b : 10010
+//            a : 100110
+
+
 
 
 
