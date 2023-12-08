@@ -1,3 +1,4 @@
+import javax.management.InstanceNotFoundException;
 import java.sql.Struct;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,6 +25,7 @@ public class C06String {
 
         //String과 int을 형변환 중요!!
 //        int a = 10;
+//        String st_a2 = String.valueOf(a);
 //        String st_a = Integer.toString(a); // int -> String "10"
 //        int c = Integer.parseInt(st_a); //String -> int 10
 //
@@ -122,7 +124,7 @@ public class C06String {
 
 
 //        String str = "01abc123한글123";
-        // replaceAll를 이용해 알파벳만 빼고 문자를 str2에 새롭게 담기
+        // replaceAll를 이용해 알파벳만 빼고 문자를 str2에 새롭게 담기-- String이 리턴 타입
         //소문자 알파벳 [a-z]
 //        String str_hangeul = str.replaceAll("[a-z]","");
 //        System.out.println(str_hangeul);
@@ -140,7 +142,7 @@ public class C06String {
 //        System.out.println(str5);
 
 
-//        Patten 클레스
+//        Patten 클레스 -- boolean이 리턴 타입
 //          boolean matcher = Pattern.matches("[a-z]", "helloworld");
 //
 //          System.out.println(matcher);
@@ -155,7 +157,7 @@ public class C06String {
 //          boolean matcher3 = Pattern.matches("^[a-z0-9]+@+[a-z]+.com$", "jej132456@gmail.com");
 //        System.out.println(matcher3);
 //
-////        split:
+////        split: -- String ->String[]
 //        String a = "a:b:c:d";
 //        String[] starr = a.split(":");
 //        System.out.println(Arrays.toString(starr));
@@ -182,7 +184,7 @@ public class C06String {
 //        System.out.println(str1 == null);
 //        System.out.println(str2 == null);
 //        System.out.println(str2.isEmpty());
-//        //NullPointer Exception 예외 발생
+//        //NullPointer Exception 예외 발생 - 런타임 에러
 //        System.out.println(str1.isEmpty()); // null은 아예 비어있는 값이라 비교 불가
 //
 //        String[] arr = new String[5];
@@ -192,6 +194,31 @@ public class C06String {
 //            System.out.println(arr[i].length());
 //        }
 
+//        join : String[] -> String
+//        String[] arr = {"java","css","html"};
+//        String arrlist = String.join(" ",arr);
+//        System.out.println(arrlist);
+
+//        String Buffer
+        String st1 = "hello";
+        StringBuffer sb1 = new StringBuffer(st1);
+        //append 마지막에 문자열을 추가, 재선언 하는 거임
+        sb1.append(" world");
+        //insert
+        sb1.insert(6, "java ");
+
+        //substring 실제 원본을 자르는게 아니라 출력만
+        System.out.println(sb1.substring(5,10));
+        //delect
+        sb1.delete(5,10);
+
+        System.out.println(sb1);
+
+//        성능: String < StringBuffer < StringBuilder(스레드 safe X)
+//        스레드: 작업의 단위, 작업의 주체이기도 함
+        StringBuilder sb2 = new StringBuilder("hello");
+        sb2.append(" world");
+        System.out.println(sb2);
 
 
 
