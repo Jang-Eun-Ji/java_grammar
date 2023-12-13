@@ -1,5 +1,5 @@
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class C11StackQueue {
     public static void main(String[] args) {
@@ -34,30 +34,67 @@ public class C11StackQueue {
 //        뒤로가기일 경우 해당 주소pop
 
 
-        Stack<String> myHistory = new Stack<>();
-        Scanner myScan = new Scanner(System.in);
-        System.out.println("사이트");
-        String inputs = myScan.nextLine();
+//        Stack<String> myHistory = new Stack<>();
+//        Stack<String> forwards = new Stack<>();
+//        boolean site = true;
+//        while (site){
+//            System.out.println("1번 신규 사이트, 2번 뒤로 가기, 3번 앞으로 가기");
+//            Scanner myScan = new Scanner(System.in);
+//            String input = myScan.nextLine();
+//            if(input.equals("1")){
+//                System.out.println("사이트 입력");
+//                Scanner sc2 = new Scanner(System.in);
+//                String input2 = sc2.nextLine();
+//                System.out.println("방문한 사이트는" + input2);
+//                myHistory.push(input2);
+//            }else if(input.equals("2")){
+//                String temp = forwards.pop();
+//                myHistory.push(temp);
+//                System.out.println("앞으로 가기를 통해 방문한 곳은" + temp);
+//            }else {
+//                String temp = myHistory.pop();
+//                forwards.push(temp);
+//                System.out.println("뒤로가기로 방문하신 곳" + myHistory.peek());
+//            }
+//        }
+        //큐선언 (poll, peek도 있다.)
+//        Queue<Integer> myQue = new LinkedList<>();
+//        myQue.add(10);
+//        myQue.add(20);
+//        myQue.add(30);
+//        System.out.println(myQue.poll()); //poll 제일 처음 값을 빼면서 산출함
+//        System.out.println(myQue);
 
-        myHistory.push(inputs);
+//        프린터 대기열 예제
+//        문서 1, 문서 2, 문서 3 추가
+//        Queue<String>myPrint = new LinkedList<>();
+//        myPrint.add("문서 1");
+//        myPrint.add("문서 2");
+//        myPrint.add("문서 3");
+//        while (!myPrint.isEmpty()){
+//            System.out.println("현재 인쇄 중인 문서: " + myPrint.poll());
+//        }
 
-        boolean site = true;
-        while (site){
-            System.out.println("1번 신규 사이트, 나머지 뒤로 가기");
-            int inputs_int = myScan.nextInt();
-            System.out.println(myHistory);
-            if(inputs_int == 1){
-                System.out.println(myHistory);
-                System.out.println("사이트 입력");
-                String inputs2 = myScan.nextLine();
-                myHistory.push(inputs2);
-                System.out.println(inputs2);
-                System.out.println("사이트 입력");
+        //길이에 제한이 있는 큐 : ArrayBlockingQueue
+//        Queue<String> myQue = new ArrayBlockingQueue<>(3);
+//        //add 와 offer의 차이: add는 길이가 다 찼을때 에러를 발생, offer공간이 충분할 때만 add
+//        myQue.offer("hello1");
+//        myQue.offer("hello2");
+//        myQue.offer("hello3");
+//        myQue.offer("hello4");
+//        System.out.println(myQue);
 
-            }else {
-                System.out.println(myHistory);
-                System.out.println(myHistory.pop());
-            }
+        //맨 앞에는 제일 작은 숫자임, 매번 초반 조금만 정렬함
+        //매우 빠름
+        Queue<Integer> pq = new PriorityQueue<>();
+        pq.add(30);
+        pq.add(20);
+        pq.add(40);
+        pq.add(10);
+        pq.add(50);
+        while (!pq.isEmpty()){
+            System.out.println(pq);
+            System.out.println(pq.poll());
         }
 
 
