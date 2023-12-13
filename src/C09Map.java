@@ -3,6 +3,8 @@ import java.util.*;
 public class C09Map {
     public static void main(String[] args) {
         //삽입된 데이터의 순서가 없다.
+//        LinkedHashMap - 넣은 순서대로 순서 있음
+//        TreeMap - key값으로 정렬
 //        Map<String,String> myMap = new HashMap<>();
 //        myMap.put("basketball","농구");
 //        myMap.put("soccer","축구");
@@ -46,18 +48,18 @@ public class C09Map {
 //            System.out.println(myIter.next());
 //        }
 
-        List<String> myList = new ArrayList<>();
-        myList.add("basketball");
-        myList.add("basketball");
-        myList.add("basketball");
-        myList.add("baseball");
-        myList.add("baseball");
-        myList.add("tennis");
-        myList.add("tennis");
-        myList.add("tennis");
-
-
-        Map<String, Integer> mySport = new HashMap<>();
+//        List<String> myList = new ArrayList<>();
+//        myList.add("basketball");
+//        myList.add("basketball");
+//        myList.add("basketball");
+//        myList.add("baseball");
+//        myList.add("baseball");
+//        myList.add("tennis");
+//        myList.add("tennis");
+//        myList.add("tennis");
+//
+//
+//        Map<String, Integer> mySport = new HashMap<>();
 
 //        for(int i =0; i < myList.size(); i++){
 //            if(!mySport.containsKey(myList.get(i))){
@@ -66,23 +68,42 @@ public class C09Map {
 //                mySport.put(myList.get(i), mySport.get(myList.get(i)) + 1);
 //            }
 //        }
-        for (String a : myList){
-            if(mySport.containsKey(a)){
-                mySport.put(a, mySport.get(a) + 1);
-            }else {
-                mySport.put(a,1);
-            }
-        }
+//        for (String a : myList){
+//            if(mySport.containsKey(a)){
+//                mySport.put(a, mySport.get(a) + 1);
+//            }else {
+//                mySport.put(a,1);
+//            }
+//        }
 
 //        for(String a : myList){
 //            mySport.put(a, mySport.getOrDefault(a, 0) + 1);
 //        }
 
 
-        for(String a : mySport.keySet()){
-            System.out.println(a + "를 좋아하는 사람은" +  mySport.get(a));
+//        for(String a : mySport.keySet()){
+//            System.out.println(a + "를 좋아하는 사람은" +  mySport.get(a));
+//
+//        }
 
-        }
+        //LinkedHashMap: 데이터 삽입순서 유지
+        Map<String, Integer> myMap = new LinkedHashMap<>();
+        myMap.put("hello5",1);
+        myMap.put("hello4",1);
+        myMap.put("hello3",1);
+        myMap.put("hello2",1);
+        myMap.put("hello1",1);
+        System.out.println(myMap.keySet());
+
+        //TreeMap: key를 통한 데이터 정렬
+        Map<String, Integer> myMap2 = new TreeMap<>();
+        myMap2.put("hello5",1);
+        myMap2.put("hello4",1);
+        myMap2.put("hello3",1);
+        myMap2.put("hello2",1);
+        myMap2.put("hello1",1);
+        System.out.println(myMap2.keySet());
+
 
 
 
