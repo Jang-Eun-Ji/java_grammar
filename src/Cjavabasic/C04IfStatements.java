@@ -1,3 +1,5 @@
+package Cjavabasic;
+
 import java.util.Scanner;
 
 public class C04IfStatements {

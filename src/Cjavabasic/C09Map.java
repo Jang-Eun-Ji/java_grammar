@@ -1,3 +1,5 @@
+package Cjavabasic;
+
 import java.util.*;
 
 public class C09Map {

@@ -1,9 +1,11 @@
-import java.util.*;
-import java.util.concurrent.ArrayBlockingQueue;
+package Cjavabasic;
 
-public class C11StackQueue {
+import java.util.ArrayDeque;
+import java.util.Deque;
+
+public class C11StackQueueDeque {
     public static void main(String[] args) {
-//       Stack 선입 후출
+//       Stack 선입 후출 // 자체가 클레스임(인터페이스가 아니고 구현체) 그래서 우측에 구현체가 필요없음
 //        Stack<Integer> mySt = new Stack<>();
 //        mySt.push(10);
 //        mySt.push(20);
@@ -15,7 +17,7 @@ public class C11StackQueue {
 //        System.out.println(mySt);
 //        System.out.println(mySt.size());
 //        System.out.println(mySt.isEmpty());
-//
+
 //        Stack<String> myStack = new Stack<>();
 //        myStack.push("hh");
 //        myStack.push("qq");
@@ -28,9 +30,9 @@ public class C11StackQueue {
 //        }
         // 웹페이지 방문 사이트 뒤로 가기 기능 구현
         //방문한 사이트 출력 + history
-        // 뒤로가기 기능도 있어야함
-        // 스케너로 신규사이트 방문 or 뒤로 가기
-//        신규사이트 방문일 경우, 해당 주소 추가 push
+//        // 뒤로가기 기능도 있어야함
+//        // 스케너로 신규사이트 방문 or 뒤로 가기
+////        신규사이트 방문일 경우, 해당 주소 추가 push
 //        뒤로가기일 경우 해당 주소pop
 
 
@@ -86,16 +88,35 @@ public class C11StackQueue {
 
         //맨 앞에는 제일 작은 숫자임, 매번 초반 조금만 정렬함
         //매우 빠름
-        Queue<Integer> pq = new PriorityQueue<>();
-        pq.add(30);
-        pq.add(20);
-        pq.add(40);
-        pq.add(10);
-        pq.add(50);
-        while (!pq.isEmpty()){
-            System.out.println(pq);
-            System.out.println(pq.poll());
-        }
+//        Queue<Integer> pq = new PriorityQueue<>();
+//        pq.add(30);
+//        pq.add(20);
+//        pq.add(40);
+//        pq.add(10);
+//        pq.add(50);
+//        while (!pq.isEmpty()){
+//            System.out.println(pq);
+//            System.out.println(pq.poll());
+//        }
+
+//        ArrayDeque : 양방향에서 데이터를 삽입/ 제거 할수 있다.
+//        성능 빠름
+        //Deque 선언법 (Ddeque이 Queue를 상속하고 있음 Queue는 LinkedList를 상속)
+        Deque<Integer> myDeque = new ArrayDeque<>();
+        //addFirst()
+        myDeque.addFirst(10);
+        myDeque.addFirst(20);// 20 -10 순으로 나옴
+        System.out.println(myDeque);
+//        addLast()
+        myDeque.addLast(30); // 20-10-30
+        System.out.println(myDeque);
+//        pollFirst()
+        System.out.println(myDeque.pollFirst());
+//        pollLast()
+        System.out.println(myDeque.pollLast());
+//        peekFirst()
+//        peekLast()
+
 
 
 
