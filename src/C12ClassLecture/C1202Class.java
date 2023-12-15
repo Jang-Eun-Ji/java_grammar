@@ -3,11 +3,11 @@ package C12ClassLecture;
 public class C1202Class {
 //    매개변수 없음() 없음, 변수, 메소드있을수도 없을수도(클래스안의 실행되는 클래스(main메소드가 있는)가있을 수도) 있음
 //    클래스는 객체를 만들어 내기 위한 도면 같은것
+//    함수 == 메소드
     public static void main(String[] args) {
 //        변수 = 필드
 //      클래스 변수 - static있는거
 //      인스턴스 변수 - static없는거 보통 객체에 스태틱없음
-//        객체.sort()- sort에는 static가 없음???
 //        메소드 입력값 = 매개변수 = parameter
 //        메소드 내에서 선언된 변수는 해당 메소드 내에서만 유효 - 지역변수
 //        클레스 변수와 객체변수는 저장되는 위치가 다름
@@ -32,14 +32,14 @@ public class C1202Class {
         System.out.println(MyCalculator.total);
 
 //        A부서의 매출
-        MyCalInatance myCalA = new MyCalInatance();
+        MyCalInsatance myCalA = new MyCalInsatance();
         myCalA.sum_acc(10);
         myCalA.sum_acc(20);
         myCalA.sum_acc(30);
         System.out.println(myCalA.total);
 
 //        B부서의 매출
-        MyCalInatance myCalB = new MyCalInatance();
+        MyCalInsatance myCalB = new MyCalInsatance();
         myCalB.sum_acc(10);
         myCalB.sum_acc(20);
         myCalB.sum_acc(30);
@@ -63,7 +63,7 @@ class MyCalculator{
 
 }
 
-class MyCalInatance{
+class MyCalInsatance{
     //static이 붙어있는 변수는 클래스변수
 //    안붙어 있으면 객체 변수
     int total = 0;
