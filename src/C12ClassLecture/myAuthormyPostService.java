@@ -62,8 +62,8 @@ public class myAuthormyPostService {
                     //회원 아이디로 post에서 author_id가 회원아이디랑 같으면 count수가 올라감
                     myAuthor temp_author4 = null; //temp에 객체 그 자체의 주소가 담김
                     for (myAuthor author : authors) {
-                        if (authors.get(i).getEmail() == author_email4) {
-                            temp_author4 = authors.get(i);
+                        if (author.getEmail().equals(author_email4)) {
+                            temp_author4 = author;
                         }
                     }
                     if (temp_author4 == null){
@@ -82,11 +82,11 @@ public class myAuthormyPostService {
                 case  5:
                     System.out.println("이메일을 적어봐라 게시글 뭐썼는지 보여드림");
                     String temp_email5 = sc.nextLine();
-                    myAuthor temp_author5 = null;
-                    for (int i = 0; i < authors.size(); i++) {
-                        if (authors.get(i).getEmail() == temp_email5) {
-                            temp_author5 = authors.get(i);
-                            System.out.println("너가쓴 글의 제목은" + temp_author5.getmyAuthorInfo());
+                    myPost temp_author5 = null;
+                    for (myPost post: posts) {
+                        if (post.getEmail().equals(temp_email5)) {
+                            temp_author5 = post;
+                            System.out.println("너가쓴 글의 제목은" + temp_author5.getTitle());
                         }
                     }
                     if(temp_author5 == null){
@@ -178,6 +178,10 @@ class myPost {
 
     public Long getId() {
         return id;
+    }
+
+    public String getEmail(){
+        return this.author.getEmail();
     }
 
     public String getTitle() {
