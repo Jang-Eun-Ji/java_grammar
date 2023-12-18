@@ -16,18 +16,18 @@ public class java_15650 {
         System.out.println("n = " + n);
         System.out.println("m = " + m);
 
-        sum1(0,n,m);
+        sum1(1,n,m,myList);
         System.out.println("myList = " + myList);
 
     }
-    static void sum1(int start, int n,int m){
-        if(temp.size() == n){
+    static void sum1(int start, int n,int m, List<List<Integer>> myList){
+        if(temp.size() == m){
             myList.add(new ArrayList<>(temp));
             return;
         }
         for(int i = start; i < n; i++){
             temp.add(i);
-            sum1(start + 1, n, m);
+            sum1(i + 1, n + 1, m, myList);
             temp.remove(temp.size()-1);
         }
     }
