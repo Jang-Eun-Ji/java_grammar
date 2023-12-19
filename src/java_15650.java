@@ -13,21 +13,26 @@ public class java_15650 {
         StringTokenizer stk =new StringTokenizer(bf.readLine());
         n = Integer.parseInt(stk.nextToken());
         m = Integer.parseInt(stk.nextToken());
-        System.out.println("n = " + n);
-        System.out.println("m = " + m);
 
         sum1(1,n,m,myList);
-        System.out.println("myList = " + myList);
-
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < myList.size(); i++) {
+            for (int j = 0; j < myList.get(i).size(); j++) {
+                sb.append(myList.get(i).get(j)).append(" ");
+            }
+            if(i == myList.size()-1) continue;
+            sb.append("\n");
+        }
+        System.out.print(sb);
     }
     static void sum1(int start, int n,int m, List<List<Integer>> myList){
         if(temp.size() == m){
             myList.add(new ArrayList<>(temp));
             return;
         }
-        for(int i = start; i < n; i++){
+        for(int i = start; i <= n; i++){
             temp.add(i);
-            sum1(i + 1, n + 1, m, myList);
+            sum1(i + 1, n , m, myList);
             temp.remove(temp.size()-1);
         }
     }
