@@ -1,6 +1,8 @@
 package C13Inheritance;
 
 //extends 키워드를 통해 상속관계를 표현
+//변수와 매소드를 extends를 쓰면 자동 상속
+//매소드를 재정의(override)
 public class C1301Inheritance extends Parents{
     int c = 30;
     public static void main(String[] args) {
@@ -11,7 +13,6 @@ public class C1301Inheritance extends Parents{
 //        System.out.println(ih.b);
         ih.parentMethod();
         ih.childMethod();
-
 
 
 
@@ -34,3 +35,4 @@ class Parents{
     }
 
 }
+
