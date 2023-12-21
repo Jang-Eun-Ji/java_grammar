@@ -2,6 +2,7 @@ package C14Interface;
 
 public class InterfaceMain {
     public static void main(String[] args) {
+//        우측에 자식클래스, 더많이 상속가능해서 더 많은 데이터를 가질수 있는 클래스가 무조건 우측우측우측
         AnimalInterface1 myCat = new CatImplements(); //오른쪽 cat이 가질수 있는 메소드가 더 크다(여러개 상속이 가능함/멀티 implements가능)
         myCat.makeSounds();
         AnimalInterface1 myDog = new DogImplements();

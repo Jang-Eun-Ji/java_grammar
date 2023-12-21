@@ -59,7 +59,7 @@ public class C11StackQueueDeque {
 //                System.out.println("뒤로가기로 방문하신 곳" + myHistory.peek());
 //            }
 //        }
-        //큐선언 (poll, peek도 있다.)
+        //큐선언 (poll, peek도 있다.) Queue ->Deque -> LinkedList(기능을 다 구현 가능해서 좌측에 new하고 쓰는겨)
 //        Queue<Integer> myQue = new LinkedList<>();
 //        myQue.add(10);
 //        myQue.add(20);
