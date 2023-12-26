@@ -1,8 +1,9 @@
-package C16EtcClass;
+package C16EtcClass; //enum타입임
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.temporal.ChronoField;
 import java.util.Calendar;
 import java.util.Locale;
 
@@ -33,6 +34,33 @@ public class C1602Calendar {
 
         LocalDateTime this_time = LocalDateTime.now();
         System.out.println(this_time);
+
+//        임의로 특정시간을 만들어 내고 싶을때: of 매소드 사용
+        LocalDate birthDay = LocalDate.of(1999,05,01);
+//        일반 내장 메소드
+        System.out.println(birthDay.getYear());
+        System.out.println(birthDay.getMonth());
+        System.out.println(birthDay.getDayOfMonth());
+        LocalTime birthTime = LocalTime.of(02,03,19);
+
+        LocalDateTime birthDayTime = LocalDateTime.of(birthDay, birthTime);
+        System.out.println(birthDayTime);
+
+//        크로노 필드 enum타입 사용 - class변수처럼 사용됨, 중요하진 않음, 매개변수로 크로노필드를 받아 프로그램의 유연성 향상
+        System.out.println(birthDayTime.get(ChronoField.YEAR));
+        System.out.println(birthDayTime.get(ChronoField.MONTH_OF_YEAR));
+//        0: 오전, 1: 오후
+        System.out.println(birthDayTime.get(ChronoField.AMPM_OF_DAY));
+//        현재 시간은 오전, 오후 입니다.
+//        int ampm = ChronoField.AMPM_OF_DAY.ordinal();
+        int ampm = this_time.get(ChronoField.AMPM_OF_DAY);
+        String AmPm = "오후";
+        if (ampm == 0);{
+            AmPm = "오전";
+        }
+        System.out.println("현재 시간은 " + AmPm + "입니다.");
+
+
 
     }
 }

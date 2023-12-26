@@ -183,7 +183,8 @@ public class C1505StreamAPI {
         }
 
 //      optional 객체 생성
-        Optional<String> opt2 = Optional.ofNullable("hello"); //null 일수도 있음을 의미// 거의 안씀
+//        Optional<String> opt2 = Optional.ofNullable(null); //null 일수도 있음을 의미// 거의 안씀 - nullable는null써도 됨
+        Optional<String> opt2 = Optional.of("hello"); //null 일수도 있음을 의미// 거의 안씀
 
 //        orElse관련 메소드 활용하여 null(빈값)처리
 //        orElse(), orElseGet(), orElseThrow()
@@ -214,5 +215,6 @@ public class C1505StreamAPI {
 
 // List, map, Array 복습하기, set,lambda,compator - 스프링에선 많이 안쓴다.
 //  객체에 대한 감을 잡기, Constrator - 스프링위해, 재귀
+
     }
 }
