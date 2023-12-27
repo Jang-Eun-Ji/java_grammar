@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
-public class C1604Iterator {
+public class C1604Iterator { //원본 삭제 가능
     public static void main(String[] args) {
         List<String> myList = new ArrayList<>();
         myList.add("apple");

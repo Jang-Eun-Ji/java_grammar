@@ -2,7 +2,7 @@ package C16EtcClass;
 
 import java.util.Arrays;
 
-public class C1603GenricMain {
+public class C1603GenricMain { // <>쓰이는건 다 제네릭, 무조건 객체타입임
     public static void main(String[] args) {
 //        재너릭 메소드 안쓴 예제
         String[] stArr = {"java","python","C++"};

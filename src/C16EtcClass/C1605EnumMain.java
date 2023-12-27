@@ -1,6 +1,6 @@
 package C16EtcClass;
 
-public class C16EtcMain {
+public class C1605EnumMain {
     public static void main(String[] args) {
         EnumStudent s1 = new EnumStudent();
         s1.setName("장은지");

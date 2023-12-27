@@ -3,7 +3,7 @@ package C17ExceptioFileParsing.AuthorException;
 
 import java.util.*;
 
-class AuthorController {
+class AuthorContorller {
     public static void main(String[] args) {
         AuthorService authorService = new AuthorService();
         while(true){
@@ -32,7 +32,7 @@ class AuthorController {
                     String author_password = sc.nextLine();
                     Optional<Author> loginedAuthor = Optional.empty();
                     try {
-                        loginedAuthor = authorService.login(author_email, author_password);
+                        loginedAuthor = Optional.ofNullable(authorService.login(author_email, author_password));
                     }catch (IllegalArgumentException e){
                         System.out.println(e.getMessage());
                     }catch (NoSuchElementException e){
