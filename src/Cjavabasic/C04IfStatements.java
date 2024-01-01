@@ -11,8 +11,7 @@ public class C04IfStatements {
 //        String inputs = myScan.nextLine();
 //        if(password.equals(inputs)) {
 //            System.out.println("문이 열렸습니다.");
-//        }
-//        else {
+//        }else {
 //            System.out.println("비밀번호가 틀렸습니다.");
 //        }
 
@@ -88,10 +87,10 @@ public class C04IfStatements {
 //                System.out.println("잘못 누르셨습니다.");
 //                break;
 //        }
-        int a = 2;
-        while (a < 11){
-            System.out.println(a);
-            a ++;
-        }
+//        int a = 2;
+//        while (a < 11){
+//            System.out.println(a);
+//            a ++;
+//        }
     }
 }

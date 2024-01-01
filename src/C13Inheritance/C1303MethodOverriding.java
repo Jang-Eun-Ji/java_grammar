@@ -13,7 +13,6 @@ public class C1303MethodOverriding {
         cat.sound();
         Animal animal = new Animal();
         animal.sound();
-        dog.sound();
 
 //        상속관계일때 부모클래스 타입을 자식클래스객체의 타입으로 출력 가능
         Animal dog1 = new Dog();
